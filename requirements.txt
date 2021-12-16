@@ -1,0 +1,3 @@
+# requirements.txt
+# install the package normally with install_requires from setup.py
+.

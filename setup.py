@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""Build information for `pysvc` project
+"""Build information for `cbexplorer` project
 """
 
 from os import getenv, path

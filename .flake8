@@ -1,4 +1,8 @@
 [flake8]
+#
+# Copyright 2020- IBM Inc. All rights reserved
+# SPDX-License-Identifier: Apache2.0
+#
 ignore =
     # E203: need to ignore this since `black` auto-formatting will
     #       automatically put a space before ':' when using slices

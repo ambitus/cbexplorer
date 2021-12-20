@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Copyright 2020- IBM Inc. All rights reserved
+# SPDX-License-Identifier: Apache2.0
+#
 
 mkdir tests/jzon
 mkdir tests/zml

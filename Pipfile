@@ -1,8 +1,4 @@
 [[source]]
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
 name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true

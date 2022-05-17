@@ -1,0 +1,91 @@
+#
+# Copyright 2020- IBM Inc. All rights reserved
+# SPDX-License-Identifier: Apache2.0
+#
+{% macro get_datatype(var) %}
+{#-------- --------#}
+{#-------- ARRAY --------#}
+{%- if var["type"] == "array" -%}
+Array({{var["items"] | length}}, {{get_datatype(var["items"][0])}}, {{var["items"][0]["size"]}})
+{#-------- BOOLEAN --------#}
+{%- elif var["type"] == "boolean" -%}
+Bit(__ld.new_from({{var["offset"]}}), length={{var["size"]}})
+{#-------- STRING --------#}
+{%- elif var["type"] == "string" -%}
+Char(__ld.new_from({{var["offset"]}}), length={{var["size"]}})
+{#-------- INTEGER --------#}
+{%- elif var["type"] == "integer" and var["format"] is none -%}
+Bit(__ld.new_from({{var["offset"]}}), length={{var["size"]}})
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "int8" -%}
+Byte(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "uint8" -%}
+Byte(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "int16" -%}
+Short(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "uint16" -%}
+Short(__ld.new_from({{var["offset"]}}), signed=False)
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "int32" -%}
+Integer(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "uint32" -%}
+Integer(__ld.new_from({{var["offset"]}}), signed=False)
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "int64" -%}
+Long(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and var["format"] == "uint64" -%}
+Long(__ld.new_from({{var["offset"]}}), signed=False)
+{#-------- BITFIELD --------#}
+{%- elif var["type"] == "object" and (var["format"] == "bitfield" or var["format"] is none) -%}
+Bit(__ld.new_from({{var["offset"]}}), length={{var["size"]}})
+{#-------- POINTER --------#}
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr8") -%}
+Pointer8(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr15") -%}
+Pointer15(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr16") -%}
+Pointer16(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr24") -%}
+Pointer24(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr31") -%}
+Pointer31(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr32") -%}
+Pointer32(__ld.new_from({{var["offset"]}}))
+{%- elif (var["type"] == "integer" or var["type"] == "object") and (var["format"] == "ptr64") -%}
+Pointer64(__ld.new_from({{var["offset"]}}))
+{#-------- EVERYTHING ELSE --------#}
+{%- else -%}
+{{ var["type"] }} - {{ var["format"] }}
+{%- endif -%}
+{%- endmacro -%}
+{%- macro replace_special(var) -%}
+{{ var | replace('@', '_AT_') | replace ('#', '_HASH_') }}
+{%- endmacro -%}
+
+from cbexplorer.types import *
+from cbexplorer.AbstractControlBlock import AbstractControlBlock
+
+class {{ cb.name }}(AbstractControlBlock):
+    def dump_fields(self):
+        return [
+        {% for property in cb.properties -%}
+        {%- if not property["name"].startswith('*') -%}
+        '{{ replace_special(property["name"]) }}'{% if not loop.last %},{% endif %}
+        {% endif -%}
+        {% endfor -%}
+        ]
+
+    def __init__(self, locator_descriptor):
+        self.__ld = locator_descriptor
+        __ld = self.__ld
+
+        {% for property in cb.properties -%}
+        {%- if not property["name"].startswith('*') -%}
+        self._{{ replace_special(property["name"]) }} = {{ get_datatype(property) }}
+        {% endif %}
+        {%- endfor %}
+
+
+    {% for property in cb.properties -%}
+    {% if not property["name"].startswith('*') -%}
+    @property
+    def {{ replace_special(property["name"]) }}(self): return self._{{ replace_special(property["name"]) }}()
+    {% endif %}
+    {% endfor %}

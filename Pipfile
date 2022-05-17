@@ -1,0 +1,36 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.9"
+
+[dev-packages]
+autopep8 = "*"
+black = "19.10b0"
+chardet = "*"
+flake8 = "*"
+pipenv-setup = "*"
+pylint = "*"
+pytest = "*"
+setuptools = "*"
+twine = "*"
+
+[packages]
+attrs = "19.3.0"
+certifi = "2019.11.28"
+click = "7.0"
+jinja2 = "2.10.3"
+more-itertools = "8.2.0"
+packaging = "20.3"
+pluggy = "0.13.1"
+py = "1.8.1"
+pyparsing = "2.4.6"
+pytest = "5.4.1"
+pyyaml = "5.3.1"
+six = "1.14.0"
+wcwidth = "0.1.9"
+
+[pipenv]
+allow_prereleases = true

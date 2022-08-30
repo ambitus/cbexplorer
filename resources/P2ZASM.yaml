@@ -1,0 +1,1203 @@
+zml: 1.0.0
+info:
+   title: P2ZASM
+   summary: >
+      ZML Test Macro
+   description: >
+      Comment test:
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+      quick brown fox jumps over the lazy dog.
+
+      quick brown fox jumps over the lazy dog.
+   contact:
+      name: "Example Corp."
+      url: https://www.example.com/contact
+      email: info@example.com
+   license:
+      name: >
+         Apache License
+         Version 2.0, January 2004
+      url: https://www.example.com/license-information
+   version: 1.0.0
+   x-zml-generator: plxmap-plx2zml
+   x-zml-generator-version: 0.9.1
+   x-zml-generation-date: 2021-10-30
+components:
+   schemas:
+      constant:
+         #
+         # Constants
+         #
+         P2ZBit_0:
+            type: boolean
+            description: >
+               Value False
+            x-zml-bit-size: 1
+            x-zml-constant: false
+         P2ZBit_1:
+            type: boolean
+            description: >
+               Value True
+            x-zml-bit-size: 1
+            x-zml-constant: true
+         P2ZBit_8_1:
+            type: integer
+            description: >
+               Value '00000000'b = '00'x
+            x-zml-size: 1
+            x-zml-constant: 0x00
+         P2ZBit_8_2:
+            type: integer
+            description: >
+               Value '00000001'b = '01'x
+            x-zml-size: 1
+            x-zml-constant: 0x01
+         P2ZBit_8_3:
+            type: integer
+            description: >
+               Value '10000000'b = '80'x
+            x-zml-size: 1
+            x-zml-constant: 0x80
+         P2ZBit_8_4:
+            type: integer
+            description: >
+               Value '11111111'b = 'FF'x
+            x-zml-size: 1
+            x-zml-constant: 0xFF
+         P2ZBit_15:
+            type: integer
+            description: >
+               Value '010101010101010'b = '2AAA'x
+            x-zml-bit-size: 15
+            x-zml-constant: 0x2AAA
+         P2ZBit_16:
+            type: integer
+            description: >
+               Value '0101010101010101'b = '5555'x
+            x-zml-size: 2
+            x-zml-constant: 0x5555
+         P2ZBit_32:
+            type: integer
+            description: >
+               Value '55555555'x
+            x-zml-size: 4
+            x-zml-constant: 0x55555555
+         P2ZBitHex1:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x00000000
+         P2ZBitHex2:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x80000000
+         P2ZBitChar1:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x40404040
+         P2ZBitChar2:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0xC1C2C3C4
+         P2ZBitAscii1:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x20202020
+         P2ZBitAscii2:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x41424344
+         P2ZBitZero1:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x40404000
+         P2ZBitZero2:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0xC1C2C300
+         P2ZBitNZero1:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0x40404040
+         P2ZBitNZero2:
+            type: integer
+            x-zml-size: 4
+            x-zml-constant: 0xC1C2C3C4
+         P2ZP24_0:
+            type: integer
+            format: ptr24
+            x-zml-size: 3
+            x-zml-constant: 0x000000
+         P2ZP24_1:
+            type: integer
+            format: ptr24
+            x-zml-size: 3
+            x-zml-constant: 0x0F0F0F
+         P2ZP24_2:
+            type: integer
+            format: ptr24
+            x-zml-size: 3
+            x-zml-constant: 0x012345
+         P2ZP24_3:
+            type: integer
+            format: ptr24
+            x-zml-size: 3
+            x-zml-constant: 0xFFFFFF
+         P2ZP31_0:
+            type: integer
+            format: ptr31
+            x-zml-size: 4
+            x-zml-constant: 0x00000000
+         P2ZP31_1:
+            type: integer
+            format: ptr31
+            x-zml-size: 4
+            x-zml-constant: 0x0F0F0F0F
+         P2ZP31_2:
+            type: integer
+            format: ptr31
+            x-zml-size: 4
+            x-zml-constant: 0x01234567
+         P2ZP31_3:
+            type: integer
+            format: ptr31
+            x-zml-size: 4
+            x-zml-constant: 0x7FFFFFFF
+         P2ZP32_0:
+            type: integer
+            format: ptr32
+            x-zml-size: 4
+            x-zml-constant: 0x00000000
+         P2ZP32_1:
+            type: integer
+            format: ptr32
+            x-zml-size: 4
+            x-zml-constant: 0x0F0F0F0F
+         P2ZP32_2:
+            type: integer
+            format: ptr32
+            x-zml-size: 4
+            x-zml-constant: 0x01234567
+         P2ZP32_3:
+            type: integer
+            format: ptr32
+            x-zml-size: 4
+            x-zml-constant: 0x7FFFFFFF
+         P2ZF8_0:
+            type: integer
+            format: uint8
+            description: >
+               Constant value 0
+            x-zml-size: 1
+            x-zml-constant: 0
+         P2ZF8_1:
+            type: integer
+            format: uint8
+            description: >
+               Constant value 1
+            x-zml-size: 1
+            x-zml-constant: 1
+         P2ZF8_2:
+            type: integer
+            format: uint8
+            description: >
+               Constant value 255
+            x-zml-size: 1
+            x-zml-constant: 255
+         P2ZF15_0:
+            type: integer
+            format: int16
+            description: >
+               Constant value 0
+            x-zml-size: 2
+            x-zml-constant: 0
+         P2ZF15_1:
+            type: integer
+            format: int16
+            description: >
+               Constant value 1
+            x-zml-size: 2
+            x-zml-constant: 1
+         P2ZF15_2:
+            type: integer
+            format: int16
+            description: >
+               Constant value 32767
+            x-zml-size: 2
+            x-zml-constant: 32767
+         P2ZF15_3:
+            type: integer
+            format: int16
+            description: >
+               Constant value -1
+            x-zml-size: 2
+            x-zml-constant: -1
+         P2ZF15_4:
+            type: integer
+            format: int16
+            description: >
+               Constant value -32768
+            x-zml-size: 2
+            x-zml-constant: -32768
+         P2ZF16_1:
+            type: integer
+            format: uint16
+            description: >
+               Constant value 0
+            x-zml-size: 2
+            x-zml-constant: 0
+         P2ZF16_2:
+            type: integer
+            format: uint16
+            description: >
+               Constant value 1
+            x-zml-size: 2
+            x-zml-constant: 1
+         P2ZF16_3:
+            type: integer
+            format: uint16
+            description: >
+               Constant value 65535
+            x-zml-size: 2
+            x-zml-constant: 65535
+         P2ZF31_0:
+            type: integer
+            format: int32
+            description: >
+               Constant value 0
+            x-zml-size: 4
+            x-zml-constant: 0
+         P2ZF31_1:
+            type: integer
+            format: int32
+            description: >
+               Constant value 1
+            x-zml-size: 4
+            x-zml-constant: 1
+         P2ZF31_2:
+            type: integer
+            format: int32
+            x-zml-size: 4
+            x-zml-constant: 2147483647
+         P2ZF31_3:
+            type: integer
+            format: int32
+            description: >
+               Constant value -1
+            x-zml-size: 4
+            x-zml-constant: -1
+         P2ZF31_4:
+            type: integer
+            format: int32
+            x-zml-size: 4
+            x-zml-constant: -2147483648
+         P2ZF32_0:
+            type: integer
+            format: uint32
+            description: >
+               Constant value 0
+            x-zml-size: 4
+            x-zml-constant: 0
+         P2ZF32_1:
+            type: integer
+            format: uint32
+            description: >
+               Constant value 1
+            x-zml-size: 4
+            x-zml-constant: 1
+         P2ZF32_2:
+            type: integer
+            format: uint32
+            x-zml-size: 4
+            x-zml-constant: -1
+         P2ZC1:
+            type: string
+            x-zml-size: 1
+            x-zml-constant: 'A'
+         P2ZC8:
+            type: string
+            x-zml-size: 8
+            x-zml-constant: 'AbCdEfGh'
+         P2ZZC1:
+            type: string
+            x-zml-size: 2
+            x-zml-constant: 'A '
+         P2ZZC8:
+            type: string
+            x-zml-size: 8
+            x-zml-constant: 'AbCdEfG '
+         P2ZNC1:
+            type: string
+            x-zml-size: 1
+            x-zml-constant: 'A'
+         P2ZNC8:
+            type: string
+            x-zml-size: 8
+            x-zml-constant: 'AbCdEfGh'
+      #
+      #     P2ZASM sample
+      #
+      #     P2Z Block
+      #
+      P2Z:
+         type: object
+         description: >
+            P2Z start
+         x-zml-offset: 0
+         x-zml-programming-interface: true
+         properties:
+            P2ZID:
+               type: string
+               description: >
+                  Control Block ID - "P2ZASM "
+               x-zml-offset: 0
+               x-zml-size: 8
+            P2Z_Pointer:
+               type: object
+               description: >
+                  Pointer test section
+               x-zml-offset: 8
+               x-zml-size: 32
+               properties:
+                  P2Z_Pointer8:
+                     type: integer
+                     format: uint8
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                  P2Z_Pointer15:
+                     type: integer
+                     format: int16
+                     x-zml-offset: 4
+                     x-zml-size: 2
+                  P2Z_Pointer16:
+                     type: integer
+                     format: uint16
+                     x-zml-offset: 6
+                     x-zml-size: 2
+                  P2Z_Pointer24:
+                     type: integer
+                     format: ptr24
+                     x-zml-offset: 9
+                     x-zml-size: 3
+                  P2Z_Pointer31:
+                     type: integer
+                     format: ptr31
+                     x-zml-offset: 12
+                     x-zml-size: 4
+                  P2Z_Pointer32:
+                     type: integer
+                     format: ptr32
+                     x-zml-offset: 16
+                     x-zml-size: 4
+                  P2Z_Pointer64:
+                     type: integer
+                     format: ptr64
+                     x-zml-offset: 24
+                     x-zml-size: 8
+            P2Z_Bit:
+               type: object
+               description: >
+                  Bit test section
+               x-zml-offset: 40
+               x-zml-size: 16
+               properties:
+                  P2Z_Bit8A:
+                     type: integer
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                  P2Z_Bit8B:
+                     type: object
+                     format: bitfield
+                     x-zml-offset: 1
+                     x-zml-size: 1
+                     properties:
+                        P2Z_Bit8_0:
+                           type: boolean
+                           x-zml-bit-offset: 0
+                           x-zml-bit-size: 1
+                        P2Z_Bit8_1_2:
+                           type: integer
+                           x-zml-bit-offset: 1
+                           x-zml-bit-size: 2
+                        P2Z_Bit8_5_7:
+                           type: integer
+                           x-zml-bit-offset: 4
+                           x-zml-bit-size: 4
+                  P2Z_Bit16:
+                     type: object
+                     format: bitfield
+                     x-zml-offset: 2
+                     x-zml-size: 2
+                     properties:
+                        P2Z_Bit16_0:
+                           type: boolean
+                           x-zml-bit-offset: 0
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_1:
+                           type: boolean
+                           x-zml-bit-offset: 1
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_2:
+                           type: boolean
+                           x-zml-bit-offset: 2
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_3:
+                           type: boolean
+                           x-zml-bit-offset: 3
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_4:
+                           type: boolean
+                           x-zml-bit-offset: 4
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_5:
+                           type: boolean
+                           x-zml-bit-offset: 5
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_6:
+                           type: boolean
+                           x-zml-bit-offset: 6
+                           x-zml-bit-size: 1
+                        P2Z_Bit16_7:
+                           type: boolean
+                           x-zml-bit-offset: 7
+                           x-zml-bit-size: 1
+                  P2Z_Bit32:
+                     type: object
+                     x-zml-offset: 4
+                     x-zml-size: 4
+                     properties:
+                        P2Z_Bit32A:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 0
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit32_0:
+                                 type: boolean
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 1
+                        P2Z_Bit32B:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 1
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit32_8_15:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit32C:
+                           type: integer
+                           x-zml-offset: 2
+                           x-zml-size: 1
+                        P2Z_Bit32D:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 3
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit32_31:
+                                 type: boolean
+                                 x-zml-bit-offset: 7
+                                 x-zml-bit-size: 1
+                  P2Z_Bit64:
+                     type: object
+                     x-zml-offset: 8
+                     x-zml-size: 8
+                     properties:
+                        P2Z_Bit64A:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 0
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_0:
+                                 type: boolean
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 1
+                              P2Z_Bit64_1_7:
+                                 type: integer
+                                 x-zml-bit-offset: 1
+                                 x-zml-bit-size: 7
+                        P2Z_Bit64B:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 1
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_8_15:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit64C:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 2
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_16_23:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit64D:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 3
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_24_31:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit64E:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 4
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_32_39:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit64F:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 5
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_40_47:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit64G:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 6
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_48_55:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 8
+                        P2Z_Bit64H:
+                           type: object
+                           format: bitfield
+                           x-zml-offset: 7
+                           x-zml-size: 1
+                           properties:
+                              P2Z_Bit64_56_62:
+                                 type: integer
+                                 x-zml-bit-offset: 0
+                                 x-zml-bit-size: 7
+                              P2Z_Bit64_63:
+                                 type: boolean
+                                 x-zml-bit-offset: 7
+                                 x-zml-bit-size: 1
+            P2Z_Fixed:
+               type: object
+               description: >
+                  Fixed test section
+               x-zml-offset: 56
+               x-zml-size: 32
+               properties:
+                  P2Z_Fixed8:
+                     type: integer
+                     format: uint8
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                  P2Z_Fixed15:
+                     type: integer
+                     format: int16
+                     x-zml-offset: 2
+                     x-zml-size: 2
+                  P2Z_Fixed16:
+                     type: integer
+                     format: uint16
+                     x-zml-offset: 4
+                     x-zml-size: 2
+                  P2Z_Fixed31:
+                     type: integer
+                     format: int32
+                     x-zml-offset: 8
+                     x-zml-size: 4
+                  P2Z_Fixed32:
+                     type: integer
+                     format: uint32
+                     x-zml-offset: 12
+                     x-zml-size: 4
+                  P2Z_Fixed63:
+                     type: integer
+                     format: int64
+                     x-zml-offset: 16
+                     x-zml-size: 8
+                  P2Z_Fixed64:
+                     type: integer
+                     format: uint64
+                     x-zml-offset: 24
+                     x-zml-size: 8
+            P2Z_Character:
+               type: object
+               description: >
+                  Character test section
+               x-zml-offset: 88
+               x-zml-size: 224
+               properties:
+                  P2Z_Char1:
+                     type: string
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                  P2Z_Char2:
+                     type: string
+                     x-zml-offset: 2
+                     x-zml-size: 2
+                  P2Z_Char4:
+                     type: string
+                     x-zml-offset: 4
+                     x-zml-size: 4
+                  P2Z_Char8:
+                     type: string
+                     x-zml-offset: 8
+                     x-zml-size: 8
+                  P2Z_Char16:
+                     type: string
+                     x-zml-offset: 16
+                     x-zml-size: 16
+                  P2Z_Char64:
+                     type: string
+                     x-zml-offset: 32
+                     x-zml-size: 64
+                  P2Z_Char128:
+                     type: string
+                     x-zml-offset: 96
+                     x-zml-size: 128
+            P2Z_Isa:
+               type: object
+               description: >
+                  ISA test section
+               x-zml-offset: 312
+               x-zml-size: 32
+               properties:
+                  P2ZIsaPtr8:
+                     type: integer
+                     format: uint8
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                  P2ZIsaInt15:
+                     type: integer
+                     format: int16
+                     x-zml-offset: 2
+                     x-zml-size: 2
+                  P2ZIsaChar8:
+                     type: string
+                     x-zml-offset: 4
+                     x-zml-size: 8
+                  P2ZIsaBit8:
+                     type: integer
+                     x-zml-offset: 12
+                     x-zml-size: 1
+                  P2ZIsaStruc:
+                     type: object
+                     x-zml-offset: 16
+                     x-zml-size: 16
+                     properties:
+                        strucC8:
+                           type: string
+                           x-zml-offset: 0
+                           x-zml-size: 8
+                        strucF64:
+                           type: integer
+                           format: uint64
+                           x-zml-offset: 8
+                           x-zml-size: 8
+            P2Z_Union:
+               type: object
+               description: >
+                  Union test section
+               x-zml-offset: 344
+               x-zml-size: 16
+               x-zml-union: true
+               properties:
+                  P2ZUnionL4:
+                     type: string
+                     x-zml-offset: 0
+                     x-zml-size: 4
+                  P2ZUnionL8:
+                     type: string
+                     x-zml-offset: 0
+                     x-zml-size: 8
+                  P2ZUnionL16:
+                     type: string
+                     x-zml-offset: 0
+                     x-zml-size: 16
+            P2Z_Comment:
+               type: object
+               description: >
+                  Comment test section
+               x-zml-offset: 360
+               x-zml-size: 8
+               properties:
+                  P2Z_CommentL1:
+                     type: string
+                     description: >
+                        quick brown fox jumps over the
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                  P2Z_CommentL2:
+                     type: string
+                     description: >
+                        quick brown fox jumps over the lazy dog.
+                     x-zml-offset: 1
+                     x-zml-size: 1
+                  P2Z_CommentL4:
+                     type: string
+                     description: >
+                        quick brown fox jumps over the lazy dog. quick brown fox
+                        jumps over the lazy dog.
+                     x-zml-offset: 2
+                     x-zml-size: 1
+                  P2Z_CommentL8:
+                     type: string
+                     description: >
+                        quick brown fox jumps over the lazy dog. quick brown fox
+                        jumps over the lazy dog. quick brown fox jumps over the lazy
+                        dog. quick brown fox jumps over the lazy dog.
+                     x-zml-offset: 3
+                     x-zml-size: 1
+            P2Z_SpecialTag:
+               type: object
+               description: >
+                  Special tag test section
+               x-zml-offset: 368
+               x-zml-size: 24
+               properties:
+                  P2Z_Override_F:
+                     type: integer
+                     format: stck
+                     description: >
+                        Override of the format field with STCK
+                     x-zml-offset: 0
+                     x-zml-size: 8
+                  P2Z_Override_T:
+                     type: string
+                     description: >
+                        Override of the type field with string
+                     x-zml-offset: 8
+                     x-zml-size: 8
+                  P2Z_Reference1:
+                     type: integer
+                     format: ptr31
+                     description: >
+                        31 bit pointer with a local reference
+                     x-zml-offset: 16
+                     x-zml-size: 4
+                     x-zml-schema:
+                        $ref: "#/components/schemas/p2z"
+                  P2Z_Reference2:
+                     type: integer
+                     format: ptr31
+                     description: >
+                        31 bit pointer with a remote reference
+                     x-zml-offset: 20
+                     x-zml-size: 4
+                     x-zml-schema:
+                        $ref: "p2zasm.yaml#/components/schemas/p2z"
+            P2Z_ZMLTag:
+               type: object
+               description: >
+                  ZML tag test section
+               x-zml-offset: 392
+               x-zml-size: 64
+               properties:
+                  P2Z_Triplet:
+                     type: object
+                     description: >
+                        Triplet test section
+                     x-zml-offset: 0
+                     x-zml-size: 12
+                     properties:
+                        P2Z_Triplet_offset:
+                           type: integer
+                           format: uint32
+                           description: >
+                              Offset to the P2ZX section from the beginning of
+                              the record
+                           x-zml-offset: 0
+                           x-zml-size: 4
+                           x-zml-triplet:
+                              schema:
+                                 $ref: "#/components/schemas/P2ZX"
+                              length:
+                                 $ref: "#/components/schemas/P2Z/properties/P2Z_ZMLTag/properties/P2Z_Triplet/properties/P2Z_Triplet_Length"
+                              number:
+                                 $ref: "#/components/schemas/P2Z/properties/P2Z_ZMLTag/properties/P2Z_Triplet/properties/P2Z_Triplet_Count"
+                        P2Z_Triplet_Length:
+                           type: integer
+                           format: uint32
+                           description: >
+                              length of the P2ZX section
+                           x-zml-offset: 4
+                           x-zml-size: 4
+                        P2Z_Triplet_Count:
+                           type: integer
+                           format: uint32
+                           description: >
+                              Number of P2ZX sections
+                           x-zml-offset: 8
+                           x-zml-size: 4
+                  P2Z_ProgrammingInterface:
+                     type: object
+                     description: >
+                        Programming interface test section
+                     x-zml-offset: 12
+                     x-zml-size: 8
+                     properties:
+                        P2Z_ProgrammingInterfaceF:
+                           type: string
+                           description: >
+                              Set to false
+                           x-zml-offset: 0
+                           x-zml-size: 4
+                           x-zml-programming-interface: false
+                        P2Z_ProgrammingInterfaceT:
+                           type: string
+                           description: >
+                              Set to true
+                           x-zml-offset: 4
+                           x-zml-size: 4
+                           x-zml-programming-interface: true
+                  P2Z_InternalUse:
+                     type: object
+                     description: >
+                        Programming interface test section
+                     x-zml-offset: 20
+                     x-zml-size: 8
+                     properties:
+                        P2Z_InternalUseF:
+                           type: string
+                           description: >
+                              Set to false
+                           x-zml-offset: 0
+                           x-zml-size: 4
+                           x-zml-internal-use: false
+                        P2Z_InternalUseT:
+                           type: string
+                           description: >
+                              Set to true
+                           x-zml-offset: 4
+                           x-zml-size: 4
+                           x-zml-internal-use: true
+                  P2Z_ScalingFactor:
+                     type: object
+                     description: >
+                        Scaling factor test section
+                     x-zml-offset: 28
+                     x-zml-size: 4
+                     properties:
+                        P2Z_ScalingFactor1:
+                           type: integer
+                           format: uint32
+                           description: >
+                              Scaling factor of 16
+                           x-zml-offset: 0
+                           x-zml-size: 4
+                           x-zml-scaling-factor: 16
+                  P2Z_Duration:
+                     type: object
+                     description: >
+                        Duration test section
+                     x-zml-offset: 32
+                     x-zml-size: 24
+                     properties:
+                        P2Z_DurationF:
+                           type: integer
+                           format: stcke
+                           description: >
+                              Set to false
+                           x-zml-offset: 0
+                           x-zml-size: 8
+                           x-zml-duration: false
+                        P2Z_DurationT:
+                           type: integer
+                           format: stcke
+                           description: >
+                              Set to true
+                           x-zml-offset: 8
+                           x-zml-size: 16
+                           x-zml-duration: true
+                  P2Z_Interpretation:
+                     type: object
+                     description: >
+                        Duration test section
+                     x-zml-offset: 56
+                     x-zml-size: 8
+                     properties:
+                        P2Z_InterpretationA:
+                           type: string
+                           description: >
+                              Use alpha interpretation
+                           x-zml-offset: 0
+                           x-zml-size: 4
+                           x-zml-interpretation:
+                              aaa: "Meaning of the aaa value"
+                              bbb: "Meaning of the bbb value"
+                              ccc: "Meaning of the ccc value"
+                              ddd: "Meaning of the ddd value"
+                              eee: "Meaning of the eee value"
+                              fff: "Meaning of the fff value"
+                        P2Z_InterpretationB:
+                           type: integer
+                           format: uint16
+                           description: >
+                              Use binary interpretation
+                           x-zml-offset: 4
+                           x-zml-size: 2
+                           x-zml-interpretation:
+                              0b00: "First interpretation"
+                              0b01: "Second interpretation"
+                              0b10: "Third interpretation"
+                              0b11: "Fourth interpretation"
+                        P2Z_InterpretationM:
+                           type: integer
+                           format: uint16
+                           description: >
+                              Use mixed interpretation
+                           x-zml-offset: 6
+                           x-zml-size: 2
+                           x-zml-interpretation:
+                              0b01: "First interpretation"
+                              2: "Second interpretation"
+            P2Z_CustomTag:
+               type: object
+               description: >
+                  Custom tag test section
+               x-zml-offset: 456
+               x-zml-size: 8
+               properties:
+                  P2Z_x_xyz_Char1:
+                     type: string
+                     description: >
+                        Custom tag with a value of abc
+                     x-zml-offset: 0
+                     x-zml-size: 1
+                     x-xyz-char1: abc
+                  P2Z_x_xyz_Char2:
+                     type: string
+                     description: >
+                        Custom tag with a value of "a b c"
+                     x-zml-offset: 1
+                     x-zml-size: 1
+                     x-xyz-char2: "a b c"
+                  P2Z_x_xyz_Num1:
+                     type: string
+                     description: >
+                        Custom tag with a value of 123
+                     x-zml-offset: 2
+                     x-zml-size: 1
+                     x-xyz-num1: 123
+                  P2Z_x_xyz_Num2:
+                     type: string
+                     description: >
+                        Custom tag with a value of 12.34
+                     x-zml-offset: 3
+                     x-zml-size: 1
+                     x-xyz-num1: 12.34
+            P2Z_Array:
+               type: object
+               description: >
+                  Array test section
+               x-zml-offset: 464
+               properties:
+                  P2Z_Array1:
+                     type: array
+                     description: >
+                        Standard Array - 10 entries
+                     maxItems: 10
+                     x-zml-offset: 0
+                     x-zml-size: 80
+                     items:
+                        type: object
+                        x-zml-size: 8
+                        properties:
+                           P2Z_Array1_Char8:
+                              type: string
+                              x-zml-offset: 0
+                              x-zml-size: 8
+                  P2Z_Array2:
+                     type: array
+                     description: >
+                        Lower bound is 5 - 5 entries
+                     maxItems: 6
+                     x-zml-offset: 80
+                     x-zml-size: 48
+                     items:
+                        type: object
+                        x-zml-size: 8
+                        properties:
+                           P2Z_Array2_Char8:
+                              type: string
+                              x-zml-offset: 0
+                              x-zml-size: 8
+                  P2Z_Array3:
+                     type: array
+                     description: >
+                        Multi dimensional - 2x3
+                     maxItems: 2
+                     x-zml-offset: 128
+                     x-zml-size: 48
+                     items:
+                        type: array
+                        maxItems: 3
+                        x-zml-size: 24
+                        items:
+                           type: object
+                           x-zml-size: 8
+                           properties:
+                              P2Z_Array3_Char8:
+                                 type: string
+                                 x-zml-offset: 0
+                                 x-zml-size: 8
+                  P2Z_Array4:
+                     type: array
+                     description: >
+                        Multi dimensional - 2x3x4x5
+                     maxItems: 2
+                     x-zml-offset: 176
+                     x-zml-size: 960
+                     items:
+                        type: array
+                        maxItems: 3
+                        x-zml-size: 480
+                        items:
+                           type: array
+                           maxItems: 4
+                           x-zml-size: 160
+                           items:
+                              type: array
+                              maxItems: 5
+                              x-zml-size: 40
+                              items:
+                                 type: object
+                                 x-zml-size: 8
+                                 properties:
+                                    P2Z_Array4_Char8:
+                                       type: string
+                                       x-zml-offset: 0
+                                       x-zml-size: 8
+                  P2Z_Array5A:
+                     type: array
+                     description: >
+                        Multi dimensional - 2x3
+                     maxItems: 2
+                     x-zml-offset: 1136
+                     x-zml-size: 1056
+                     items:
+                        type: array
+                        maxItems: 3
+                        x-zml-size: 528
+                        items:
+                           type: object
+                           x-zml-size: 176
+                           properties:
+                              P2Z_Array5A_Char8:
+                                 type: string
+                                 x-zml-offset: 0
+                                 x-zml-size: 8
+                              P2Z_Array5B:
+                                 type: array
+                                 description: >
+                                    Multi dimensional - 4x5
+                                 maxItems: 4
+                                 x-zml-offset: 8
+                                 x-zml-size: 160
+                                 items:
+                                    type: array
+                                    maxItems: 5
+                                    x-zml-size: 40
+                                    items:
+                                       type: object
+                                       x-zml-size: 8
+                                       properties:
+                                          P2Z_Array5B_Char8:
+                                             type: string
+                                             x-zml-offset: 0
+                                             x-zml-size: 8
+                              P2Z_Array5C_Char8:
+                                 type: string
+                                 x-zml-offset: 168
+                                 x-zml-size: 8
+                  P2Z_Array6:
+                     type: array
+                     description: >
+                        Standard Array - unknown entries
+                     x-zml-offset: 2192
+                     items:
+                        type: object
+                        x-zml-size: 8
+                        properties:
+                           P2ZArray6_Char8:
+                              type: string
+                              x-zml-offset: 0
+                              x-zml-size: 8
+      #
+      #     P2ZASM sample
+      #
+      #     P2ZX Block
+      #
+      P2ZX:
+         type: object
+         description: >
+            P2ZX start
+         x-zml-offset: 0
+         x-zml-programming-interface: false
+         properties:
+            P2ZXID:
+               type: string
+               description: >
+                  Control Block ID - "P2ZXASM "
+               x-zml-offset: 0
+               x-zml-size: 8
+            P2ZX_Array7:
+               type: array
+               description: >
+                  Multi dimensional - unknown x2
+               x-zml-offset: 8
+               items:
+                  type: array
+                  maxItems: 2
+                  x-zml-size: 16
+                  items:
+                     type: object
+                     x-zml-size: 8
+                     properties:
+                        P2ZX_Array7_Char8:
+                           type: string
+                           x-zml-offset: 0
+                           x-zml-size: 8
+      #
+      #     P2ZASM sample
+      #
+      #     P2ZY Block
+      #
+      P2ZY:
+         type: object
+         description: >
+            P2ZY start
+         x-zml-offset: 0
+         x-zml-programming-interface: true
+         properties:
+            P2ZYID:
+               type: string
+               description: >
+                  Control Block ID - "P2ZYASM "
+               x-zml-offset: 0
+               x-zml-size: 8
+            P2ZY_CharU:
+               type: string
+               description: >
+                  Character test section undefined length
+               x-zml-offset: 8

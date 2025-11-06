@@ -1,3 +1,5 @@
+> ⚠️ _A new version of this project is now available at https://github.com/ambitus/cbxp._
+
 # cbexplorer
 
 The control block explorer project
